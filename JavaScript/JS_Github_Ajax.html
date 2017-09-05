@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GitHub</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div id="profile"></div>
+  <script>
+    function getProfile(){
+      var username = 'renga1987';
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function(){
+        if(xhttp.readyState == 4 && xhttp.status == 200){
+          var user = JSON.parse(xhttp.responseText);
+          //document.getElementById('profile').innerHTML = user.login;
+          document.getElementById('profile').innerHTML = `<div class="panel panel-default">
+                                                            <div class="panel-heading">
+                                                                <h3 class="panel-title">${user.login}</h3>
+                                                            </div>
+                                                            <div class="panel-body">
+                                                              Panel content
+                                                            </div>
+                                                            </div>`
+        }
+      }
+      xhttp.open('GET','https://api.github.com/users/'+username,true);
+      xhttp.send();
+    }
+    getProfile();
+  </script>
+</body>
+</html>

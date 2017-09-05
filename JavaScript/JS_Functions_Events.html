@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body onload="init()">
+  <!--<button onclick="getDate()">Submit</button>-->
+  <button onmouseover="getDate()">Submit</button>
+  <form id="myForm">
+    <div>
+      <label>Name</label>
+      <input type="text" id="name">
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="text" id="email">
+    </div>
+    <input type="submit" value="submit">
+  </form>
+
+  <h1 id="showDate"></h1>
+  <script>
+    //functions
+    function sayHello(greeting){
+      alert(greeting);
+    }
+    //sayHello('Hello World');
+
+    //Function with a default value.
+    //If value is passed it will take that else take the default.
+    function sayHello(greeting,name='Renga'){
+      alert(greeting+' '+name);
+    }
+    //sayHello('Hello','Jack');
+
+    function getDate(){
+      var d = new Date();
+      document.getElementById('showDate').innerHTML = d;
+      //alert(d);
+    }
+
+    function submitForm(e) {
+
+      //Reason for using this is in the below comment
+      e.preventDefault();
+      var name = document.getElementById('name').value;
+      //alert(name);
+      //When we give this it wont print since the default behaviour of form is to submit.
+      //We have to prevent that default to get the log printed.
+      //Hence we have used the above e.preventDefault();
+      console.log(name);
+    }
+
+    function init(){
+      console.log('Page Loaded');
+    }
+    //Adding EventListener
+    document.getElementById('myForm').addEventListener('submit',submitForm,false);
+
+
+  </script>
+</body>
+</html>

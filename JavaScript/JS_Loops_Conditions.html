@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <ul id="people"></ul>
+  <script>
+    //for
+    for(i=0;i<10;i++){
+      console.log(i);
+    }
+
+    //While
+    var j=10;
+    while(j<20){
+      console.log(j);
+      j++;
+    }
+
+   //Looping Arrays
+    var people = ['Ram','Renga'];
+    for(var i=0;i<people.length;i++){
+      console.log(people[i]);
+    }
+
+    //Looping objects
+    var peopleObj = [
+      {
+        name:'Ram',
+        age:20
+      },
+      {
+        name:'Ram1',
+        age:30
+      },
+      {
+        name:'Ram2',
+        age:40
+      }
+    ];
+
+    for(var i=0;i<peopleObj.length;i++){
+      console.log(peopleObj[i].name);
+      document.getElementById('people').innerHTML+='<li>'+peopleObj[i].name+' - '+peopleObj[i].age+'</li>';
+    }
+
+    //if statements
+    var x=3;
+    var y=5;
+    var z=7;
+    if(x<y || z==7){
+      console.log(x+' is less than '+y);
+    }else if(x==y){
+      console.log(x+' is equal to '+y);
+    }else{
+      console.log(x+' is greater than '+y);
+    }
+
+    //Switch
+
+    var name='adam';
+    switch(name){
+      case 'Adam':
+        console.log('Name is Adam');
+        break;
+      case 'Renga':
+        console.log('Name is Renga');
+        break;
+      default:
+        console.log('Default Name is:'+name);
+        break;
+    }
+
+  </script>
+</body>
+</html>
