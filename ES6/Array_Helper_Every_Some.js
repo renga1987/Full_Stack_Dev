@@ -17,3 +17,15 @@ var fields = [userName,passWord]
 fields.every(function(field){
 return field.validate();
 });
+
+//2.
+
+var requests = [
+  { url: '/photos', status: 'complete' },
+  { url: '/albums', status: 'pending' },
+  { url: '/users', status: 'failed' }
+];
+
+var inProgress = requests.some(function(request){
+    return request.status === 'pending'
+});
